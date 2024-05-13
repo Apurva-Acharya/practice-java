@@ -1,0 +1,26 @@
+import java.util.Scanner;
+
+public class PlusMinus {
+	public static void main(String args[]) {
+		Scanner sc = new Scanner(System.in);
+		int n = sc.nextInt();
+		float z = 0,p = 0,neg = 0;
+		int[] arr = new int[n];
+		for (int i = 0; i < n; i++) {
+			arr[i] = sc.nextInt();
+		}
+		for(int i = 0; i < n; i++) {
+			if(arr[i]==0) 
+				z++;
+			if(arr[i]<0) 
+				neg++;
+			if(arr[i]>0)
+				p++;
+			
+		}
+		//print ratio
+		System.out.println(p/=arr.length);
+		System.out.println(neg/=arr.length);
+		System.out.println(z/=arr.length);
+	}
+}
