@@ -1,0 +1,42 @@
+import java.util.Scanner;
+import java.math.*;
+
+public class ApplesOranges {
+
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+		int rangeStart = sc.nextInt();
+		int rangeEnd = sc.nextInt();
+		int appleTree = sc.nextInt();
+		int orangeTree = sc.nextInt();
+		int m = sc.nextInt();
+		int n = sc.nextInt();
+		int[] apples = new int[m];
+		int[] oranges = new int[n];
+		int[] applesNew = new int[m];
+		int[] orangesNew = new int[n];
+		int applecount = 0, orangecount = 0;
+		for (int i = 0; i < m; i++) {
+			apples[i] = sc.nextInt();
+		}
+		for (int i = 0; i < n; i++) {
+			oranges[i] = sc.nextInt();
+		}
+		for (int i = 0; i < m; i++) {
+			applesNew[i] = apples[i] + appleTree;
+			if (applesNew[i] >= rangeStart && applesNew[i] <= rangeEnd) {
+				applecount++;
+			}
+		}
+		for (int i = 0; i < n; i++) {
+			orangesNew[i] = oranges[i] + orangeTree;
+			if (orangesNew[i] >= rangeStart && orangesNew[i] <= rangeEnd) {
+				orangecount++;
+			}
+		}
+		
+		System.out.println(applecount);
+		System.out.println(orangecount);
+	}
+
+}
