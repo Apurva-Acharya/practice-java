@@ -1,0 +1,32 @@
+import java.util.Scanner;
+
+public class SubArrayDivision {
+
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+		int n = sc.nextInt();
+//		System.out.println(n);
+		int[] numOnSquares = new int[n];
+		for (int i = 0; i < n; i++) {
+			numOnSquares[i] = sc.nextInt();
+//			System.out.println(numOnSquares[i]);
+		}
+		int d = sc.nextInt();
+//		System.out.println(d);
+		int m = sc.nextInt();
+//		System.out.println(m);
+		int count = 0;
+
+		for (int i = 0; i < numOnSquares.length-m+1; i++) {
+			int sum = 0;
+			for (int j = i; j < m+i ; j++) {
+				sum = sum + numOnSquares[j];
+			}
+			if (sum == d) {
+				count++;
+			}
+		}
+		System.out.println(count);
+	}
+
+}
