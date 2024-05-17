@@ -1,0 +1,24 @@
+import java.util.Scanner;
+
+public class BillDivision {
+
+	public static void main(String[] args) {
+		Scanner sc= new Scanner(System.in);
+		int itemCount=sc.nextInt();
+		int excludedItem= sc.nextInt();
+		int[] itemCosts= new int[itemCount];
+		int sum=0;
+		for(int i=0; i<itemCount; i++) {
+			itemCosts[i]=sc.nextInt();
+			sum=sum+itemCosts[i];
+		}
+		int charged=sc.nextInt();
+		int actual= (sum - itemCosts[excludedItem])/2;
+		if(actual==charged) {
+			System.out.println("Bon Appetit");
+		}else {
+			System.out.println(Math.abs(charged-actual));
+		}
+	}
+
+}
