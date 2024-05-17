@@ -1,0 +1,27 @@
+public class SalesByMatch {
+
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+		int n = sc.nextInt();
+		int[] socks = new int[n];
+		for (int i = 0; i < n; i++) {
+			socks[i]=sc.nextInt();
+		}
+		
+	        Map<Integer, Integer> colorsCount = new HashMap<Integer,Integer>();
+	        for (int i = 0; i < socks.length; i++) {
+	            if (colorsCount.get(socks[i]) == null) {
+	                colorsCount.put(socks[i], 1);
+	            } else {
+	                colorsCount.put(socks[i], colorsCount.get(socks[i]) + 1);
+	            }
+	        }
+	        int pairs = 0;
+	        for (Map.Entry<Integer, Integer> entry : colorsCount.entrySet()) {
+	            pairs += entry.getValue() / 2;
+	        }
+	        System.out.println(pairs);
+	    
+	}
+
+}
