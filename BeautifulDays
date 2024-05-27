@@ -1,0 +1,26 @@
+import java.util.Scanner;
+
+public class BeautifulDays {
+
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+		int startDay = sc.nextInt();
+		int endDay = sc.nextInt();
+		int divisor = sc.nextInt();
+		int beautiFulDayCount = 0;
+		
+		for (int i = startDay; i <= endDay; i++) {
+			StringBuilder sb= new StringBuilder(String.valueOf(i));
+			int iReverse = Integer.parseInt(sb.reverse().toString());
+            
+            if(Math.abs(i-iReverse) % divisor == 0)
+            {
+            	beautiFulDayCount++;
+            }
+        }
+		
+		System.out.println(beautiFulDayCount);
+	}
+
+
+}
