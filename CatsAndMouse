@@ -1,0 +1,30 @@
+import java.util.Scanner;
+
+public class CatAndMouse {
+
+	public static void main(String[] args) {
+		CatAndMouse cm = new CatAndMouse();
+		Scanner sc = new Scanner(System.in);
+		int noOfQueries = sc.nextInt();
+		for (int i = 0; i < noOfQueries; i++) {
+			int x_i = sc.nextInt(); // cat a position
+			int y_i = sc.nextInt(); // cat b positin
+			int z_i= sc.nextInt(); // position of mouse
+			cm.doCatsCatchMouse(x_i, y_i, z_i);
+		}
+		
+		
+	}
+
+	private void doCatsCatchMouse(int x, int y, int z) {
+		int catADistFromMouse = Math.abs(x - z);
+		int catBDistFromMouse = Math.abs(y - z);
+		if (catADistFromMouse < catBDistFromMouse) {
+			System.out.println("Cat A");
+		} else if (catBDistFromMouse < catADistFromMouse) {
+			System.out.println("Cat B");
+		} else {
+			System.out.println("Mouse C");
+		}
+	}
+}
