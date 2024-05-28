@@ -1,0 +1,24 @@
+//https://www.hackerrank.com/challenges/find-digits/problem
+import java.util.Scanner;
+
+public class FindFDigits {
+
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+		int loop = sc.nextInt();
+		for (int i = 0; i < loop; i++) {
+			int number = sc.nextInt();
+			int copy = number;
+			int count = 0;
+			while (copy > 0) {
+				int digit = copy % 10;
+				if (digit != 0 && number % digit == 0) {
+					count++;
+				}
+				copy = copy / 10;
+			}
+			System.out.println(count);
+
+		}
+	}
+}
