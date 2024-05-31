@@ -1,0 +1,33 @@
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Scanner;
+
+public class SherlockAndArray {
+
+	public static void main(String[] args) {
+		Scanner sc= new Scanner(System.in);
+		List<Integer> numList;
+		int testCases= sc.nextInt();
+		for(int i=0; i<testCases; i++) {
+			int n=sc.nextInt();
+			numList=new ArrayList<>();
+			for(int j=0;j<n; j++) {
+				numList.add(j, sc.nextInt());
+			}
+			System.out.println(sherlockArray(numList));
+		}
+	}
+	public static String sherlockArray(List<Integer> nums) {
+		int totalSum=0;
+		for(int i=0; i<nums.size(); i++) {
+			totalSum=totalSum+nums.get(i);
+		}
+		int leftSum=0;
+		for(int i=0;i<nums.size();i++) {
+			totalSum=totalSum-nums.get(i);
+			if(leftSum==totalSum) return "YES";
+			else leftSum=leftSum+nums.get(i);
+		}
+		return "NO";
+	}
+}
